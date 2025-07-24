@@ -5,7 +5,7 @@ const Testimonials = () => {
     {
       name: "Sarah M.",
       location: "Kigali",
-      text: "Amazing quality products! My CeraVe skincare arrived perfectly packaged and is 100% authentic. Viva_.plus is now my go-to beauty store.",
+      text: "Amazing quality products! My CeraVe skincare arrived perfectly packaged and is 100% authentic. VIVA PLUS is now my go-to beauty store.",
       rating: 5
     },
     {
@@ -29,7 +29,7 @@ const Testimonials = () => {
           What Our Customers Say
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Join thousands of satisfied customers who trust Viva_.plus for their beauty needs
+          Join thousands of satisfied customers who trust VIVA PLUS for their beauty needs
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

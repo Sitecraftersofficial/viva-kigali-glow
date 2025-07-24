@@ -3,13 +3,13 @@ const About = () => {
     <section className="py-20 px-4 bg-gradient-card">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
-          About Viva_.plus
+          About VIVA PLUS
         </h2>
         
         <div className="bg-card rounded-2xl p-8 md:p-12 shadow-soft">
           <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
             Located in the heart of Kigali at <strong>MIC Building F1 Room 14</strong>, 
-            Viva_.plus is your trusted destination for authentic luxury cosmetics and beauty products.
+            VIVA PLUS is your trusted destination for authentic luxury cosmetics and beauty products.
           </p>
           
           <p className="text-md md:text-lg text-muted-foreground mb-8 leading-relaxed">

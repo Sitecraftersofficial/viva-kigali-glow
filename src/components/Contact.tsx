@@ -75,7 +75,7 @@ const Contact = () => {
           {/* Trust & Delivery */}
           <div className="space-y-8">
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h3 className="text-2xl font-bold mb-6 text-card-foreground">Why Choose Viva_.plus</h3>
+              <h3 className="text-2xl font-bold mb-6 text-card-foreground">Why Choose VIVA PLUS</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
