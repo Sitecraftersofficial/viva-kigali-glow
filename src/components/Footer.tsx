@@ -151,7 +151,7 @@ const Footer = () => {
 
           <div className="text-center mt-6 pt-6 border-t border-border">
             <p className="text-muted-foreground text-sm">
-              © 2024 VIVA PLUS. All rights reserved. • Premium Beauty Products in Kigali, Rwanda
+              © 2025 VIVA PLUS. All rights reserved. • Premium Beauty Products in Kigali, Rwanda
             </p>
           </div>
         </div>

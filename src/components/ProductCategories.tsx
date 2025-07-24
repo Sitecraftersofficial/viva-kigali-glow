@@ -46,6 +46,7 @@ const ProductCategories = () => {
                 key={category.name}
                 className="group bg-card rounded-2xl p-8 shadow-soft hover:shadow-glow transition-all duration-300 cursor-pointer hover:-translate-y-2"
                 style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => window.location.href = `/products?category=${category.name}`}
               >
                 <div className={`w-16 h-16 bg-gradient-to-br ${category.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <Icon className="w-8 h-8 text-white" />

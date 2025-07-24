@@ -39,6 +39,7 @@ const Hero = () => {
             variant="hero" 
             size="lg" 
             className="w-full sm:w-auto text-lg px-8 py-6"
+            onClick={() => window.location.href = '/products'}
           >
             <ShoppingBag className="mr-2" />
             Shop Now
