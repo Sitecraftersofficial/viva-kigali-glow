@@ -1,8 +1,26 @@
 import { useEffect, useState } from "react";
 
+const brandLogos = {
+  "Dior": "https://logo.clearbit.com/dior.com",
+  "Fenty Beauty": "https://logo.clearbit.com/fentybeauty.com",
+  "CeraVe": "https://logo.clearbit.com/cerave.com",
+  "The Ordinary": "https://logo.clearbit.com/theordinary.com",
+  "Charlotte Tilbury": "https://logo.clearbit.com/charlottetilbury.com",
+  "Rare Beauty": "https://logo.clearbit.com/rarebeauty.com",
+  "Glossier": "https://logo.clearbit.com/glossier.com",
+  "YSL Beauty": "https://logo.clearbit.com/ysl.com",
+  "Clinique": "https://logo.clearbit.com/clinique.com",
+  "Estée Lauder": "https://logo.clearbit.com/esteelauder.com",
+  "Mac Cosmetics": "https://logo.clearbit.com/maccosmetics.com",
+  "Urban Decay": "https://logo.clearbit.com/urbandecay.com",
+  "Benefit": "https://logo.clearbit.com/benefitcosmetics.com",
+  "Too Faced": "https://logo.clearbit.com/toofaced.com",
+  "Nars": "https://logo.clearbit.com/narscosmetics.com",
+};
+
 const BrandCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   const brands = [
     "Dior", "Fenty Beauty", "CeraVe", "The Ordinary", "Charlotte Tilbury",
     "Rare Beauty", "Glossier", "YSL Beauty", "Clinique", "Estée Lauder",
@@ -18,7 +36,7 @@ const BrandCarousel = () => {
   }, [brands.length]);
 
   const getVisibleBrands = () => {
-    const brandsPerSlide = 2; // Changed to 2 for mobile
+    const brandsPerSlide = 2; // mobile view
     const start = currentIndex * brandsPerSlide;
     return brands.slice(start, start + brandsPerSlide);
   };
@@ -42,10 +60,13 @@ const BrandCarousel = () => {
                   key={`${brand}-${currentIndex}-${index}`}
                   className="text-center animate-fade-in"
                 >
-                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-3 mx-auto shadow-glow">
-                    <span className="text-primary-foreground font-bold text-lg">
-                      {brand.charAt(0)}
-                    </span>
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-3 mx-auto shadow-glow bg-white p-2">
+                    <img
+                      src={brandLogos[brand]}
+                      alt={`${brand} logo`}
+                      className="max-h-10 object-contain"
+                      onError={(e) => { e.currentTarget.style.display = "none"; }}
+                    />
                   </div>
                   <p className="font-semibold text-card-foreground text-sm">
                     {brand}
@@ -53,16 +74,18 @@ const BrandCarousel = () => {
                 </div>
               ))}
             </div>
-            
+
             {/* Dots Indicator */}
             <div className="flex justify-center mt-4 gap-2">
               {Array.from({ length: Math.ceil(brands.length / 2) }).map((_, index) => (
                 <button
                   key={index}
                   className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentIndex ? 'bg-primary' : 'bg-muted'
+                    index === currentIndex ? "bg-primary" : "bg-muted"
                   }`}
                   onClick={() => setCurrentIndex(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                  title={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
@@ -74,13 +97,16 @@ const BrandCarousel = () => {
           {brands.slice(0, 10).map((brand, index) => (
             <div
               key={brand}
-              className="bg-card rounded-2xl p-6 shadow-soft hover:shadow-glow transition-all duration-300 text-center group hover:-translate-y-1"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="bg-card rounded-2xl p-6 shadow-soft hover:shadow-glow transition-all duration-300 text-center group hover:-translate-y-1 brand-fade-in"
+              data-animation-delay={`${index * 0.1}s`}
             >
-              <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-glow group-hover:scale-110 transition-transform">
-                <span className="text-primary-foreground font-bold text-xl">
-                  {brand.charAt(0)}
-                </span>
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-glow bg-white p-2 group-hover:scale-110 transition-transform">
+                <img
+                  src={brandLogos[brand]}
+                  alt={`${brand} logo`}
+                  className="max-h-10 object-contain"
+                  onError={(e) => { e.currentTarget.style.display = "none"; }}
+                />
               </div>
               <p className="font-semibold text-card-foreground group-hover:text-primary transition-colors">
                 {brand}

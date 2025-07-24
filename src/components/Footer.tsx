@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone, Instagram, MapPin, Clock, Mail } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Clock } from "lucide-react";
+import vivaLogo from "@/assets/viva-logo.png";
 
 const Footer = () => {
   const handleWhatsAppClick = () => {
@@ -20,12 +21,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">V</span>
+              <div className="flex items-center space-x-2 hover:scale-105 transition-transform duration-700 cursor-default">
+                <img src={vivaLogo} alt="VIVA PLUS" className="w-10 h-10 rounded-full" />
+                <span className="text-xl md:text-2xl font-bold text-foreground">
+                  VIVA PLUS
+                </span>
               </div>
-              <span className="text-2xl font-bold text-card-foreground">
-                VIVA PLUS
-              </span>
             </div>
             
             <p className="text-muted-foreground mb-6 max-w-md">
@@ -94,16 +95,15 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Product Categories */}
+          {/* Why Choose Us */}
           <div>
-            <h3 className="font-bold text-card-foreground mb-4">Categories</h3>
-            <div className="space-y-3">
-              <span className="block text-muted-foreground">Makeup</span>
-              <span className="block text-muted-foreground">Skincare</span>
-              <span className="block text-muted-foreground">Fragrance</span>
-              <span className="block text-muted-foreground">Haircare</span>
-              <span className="block text-muted-foreground">Beauty Tools</span>
-              <span className="block text-muted-foreground">Gift Sets</span>
+            <h3 className="font-bold text-card-foreground mb-4">Why Choose Us</h3>
+            <div className="space-y-3 text-muted-foreground">
+              <span className="block">100% Genuine Products</span>
+              <span className="block">Trusted by Hundreds in Kigali</span>
+              <span className="block">Friendly In-Store Experts</span>
+              <span className="block">Free Delivery on Big Orders</span>
+              <span className="block">WhatsApp Support 24/7</span>
             </div>
           </div>
         </div>
@@ -127,7 +127,22 @@ const Footer = () => {
                 size="sm"
                 onClick={() => window.open("https://instagram.com/viva_.plus", "_blank")}
               >
-                <Instagram className="w-4 h-4 mr-2" />
+                <svg
+                  className="w-4 h-4 mr-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <title>Instagram</title>
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+                </svg>
                 Follow Us
               </Button>
             </div>

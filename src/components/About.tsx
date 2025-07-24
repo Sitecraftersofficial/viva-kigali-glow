@@ -1,3 +1,5 @@
+import { Zap, Heart, Check } from "lucide-react";
+
 const About = () => {
   return (
     <section className="py-20 px-4 bg-gradient-card">
@@ -21,23 +23,23 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             <div className="text-center p-6 bg-muted rounded-xl">
               <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary-foreground font-bold text-xl">✓</span>
+                <span className="text-primary-foreground font-bold text-xl"><Check /></span>
               </div>
               <h3 className="font-semibold mb-2">100% Authentic</h3>
               <p className="text-sm text-muted-foreground">All products are sourced directly from authorized distributors</p>
             </div>
 
             <div className="text-center p-6 bg-muted rounded-xl">
-              <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-accent-foreground font-bold text-xl">⚡</span>
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-primary-foreground font-bold text-xl"><Zap /></span>
               </div>
               <h3 className="font-semibold mb-2">Fast Delivery</h3>
-              <p className="text-sm text-muted-foreground">Quick and reliable delivery across Kigali and Rwanda</p>
+              <p className="text-sm text-muted-foreground">Quick and reliable delivery across Kigali</p>
             </div>
 
             <div className="text-center p-6 bg-muted rounded-xl">
               <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary-foreground font-bold text-xl">♥</span>
+                <span className="text-primary-foreground font-bold text-xl"><Heart /></span>
               </div>
               <h3 className="font-semibold mb-2">Expert Care</h3>
               <p className="text-sm text-muted-foreground">Personalized beauty advice from our knowledgeable team</p>

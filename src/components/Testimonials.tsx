@@ -56,8 +56,8 @@ const Testimonials = () => {
 
               {/* Customer Info */}
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mr-4">
-                  <span className="text-primary-foreground font-bold">
+                <div className="w-12 h-12 bg-gradient-primary rounded-full border flex items-center justify-center mr-4">
+                  <span className="text-gold font-bold">
                     {testimonial.name.charAt(0)}
                   </span>
                 </div>

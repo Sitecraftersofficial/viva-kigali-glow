@@ -66,6 +66,11 @@ export default {
 				whatsapp: {
 					DEFAULT: 'hsl(var(--whatsapp))',
 					foreground: 'hsl(var(--whatsapp-foreground))'
+				},
+				gold: {
+					DEFAULT: '#FFD700',      // Classic gold
+					light: '#FFECB3',        // Light gold
+					dark: '#B8860B',         // Dark gold / goldenrod
 				}
 			},
 			borderRadius: {

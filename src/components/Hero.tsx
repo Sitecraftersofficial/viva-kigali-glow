@@ -16,7 +16,7 @@ const Hero = () => {
           alt="Luxury beauty products"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/95" />
       </div>
 
       {/* Content */}
@@ -38,7 +38,7 @@ const Hero = () => {
           <Button 
             variant="hero" 
             size="lg" 
-            className="w-full sm:w-auto text-lg px-8 py-6"
+            className="w-full sm:w-auto text-lg px-8 py-6 bg-gold hover:bg-gold/90"
             onClick={() => window.location.href = '/products'}
           >
             <ShoppingBag className="mr-2" />

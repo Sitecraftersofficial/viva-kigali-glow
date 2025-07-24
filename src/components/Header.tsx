@@ -50,7 +50,7 @@ const Header = () => {
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 hover:scale-105 transition-transform duration-700 cursor-default">
             <img src={vivaLogo} alt="VIVA PLUS" className="w-10 h-10 rounded-full" />
             <span className="text-xl md:text-2xl font-bold text-foreground">
               VIVA PLUS
@@ -61,25 +61,25 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-foreground hover:text-accent-foreground transition-colors font-medium"
+              className="text-foreground hover:text-gray-200 transition-colors duration-500 font-medium"
             >
               Home
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-foreground hover:text-accent-foreground transition-colors font-medium"
+              className="text-foreground hover:text-gray-200 transition-colors duration-500 font-medium"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('products')}
-              className="text-foreground hover:text-accent-foreground transition-colors font-medium"
+              className="text-foreground hover:text-gray-200 transition-colors duration-500 font-medium"
             >
               Products
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-foreground hover:text-accent-foreground transition-colors font-medium"
+              className="text-foreground hover:text-gray-200 transition-colors duration-500 font-medium"
             >
               Contact
             </button>
@@ -92,7 +92,7 @@ const Header = () => {
               size="sm"
               onClick={() => window.open("https://instagram.com/viva_.plus", "_blank")}
             >
-              <Instagram className="w-4 h-4" />
+              <Instagram className="w-8 h-8" />
             </Button>
             
             <Button
