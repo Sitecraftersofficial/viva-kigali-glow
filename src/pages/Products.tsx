@@ -230,7 +230,7 @@ Best regards,
           </div>
           
           {/* Subcategory Buttons */}
-          {selectedCategory && (
+          {selectedCategory && selectedCategory !== "menu" && categories[selectedCategory] && (
             <div className="flex flex-wrap gap-2 mb-6">
               {categories[selectedCategory].subcategories.map((sub) => (
                 <Button
