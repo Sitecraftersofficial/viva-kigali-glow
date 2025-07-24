@@ -11,14 +11,14 @@ const BrandCarousel = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(brands.length / 3));
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(brands.length / 2));
     }, 3000);
 
     return () => clearInterval(timer);
   }, [brands.length]);
 
   const getVisibleBrands = () => {
-    const brandsPerSlide = 3;
+    const brandsPerSlide = 2; // Changed to 2 for mobile
     const start = currentIndex * brandsPerSlide;
     return brands.slice(start, start + brandsPerSlide);
   };
@@ -35,14 +35,14 @@ const BrandCarousel = () => {
 
         {/* Mobile Carousel */}
         <div className="md:hidden">
-          <div className="relative overflow-hidden bg-card rounded-2xl shadow-soft p-8">
-            <div className="flex items-center justify-center min-h-[120px]">
+          <div className="relative overflow-hidden bg-card rounded-2xl shadow-soft p-6">
+            <div className="grid grid-cols-2 gap-4 min-h-[120px]">
               {getVisibleBrands().map((brand, index) => (
                 <div
                   key={`${brand}-${currentIndex}-${index}`}
                   className="text-center animate-fade-in"
                 >
-                  <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-glow">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-3 mx-auto shadow-glow">
                     <span className="text-primary-foreground font-bold text-lg">
                       {brand.charAt(0)}
                     </span>
@@ -55,8 +55,8 @@ const BrandCarousel = () => {
             </div>
             
             {/* Dots Indicator */}
-            <div className="flex justify-center mt-6 gap-2">
-              {Array.from({ length: Math.ceil(brands.length / 3) }).map((_, index) => (
+            <div className="flex justify-center mt-4 gap-2">
+              {Array.from({ length: Math.ceil(brands.length / 2) }).map((_, index) => (
                 <button
                   key={index}
                   className={`w-2 h-2 rounded-full transition-colors ${
