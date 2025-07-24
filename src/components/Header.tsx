@@ -120,16 +120,31 @@ const Header = () => {
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
           <div className="fixed inset-0 z-40 md:hidden">
-            <div className="fixed inset-0 bg-background/95 backdrop-blur-md" />
-            <div className="relative z-50 flex h-full w-full flex-col bg-background/98 backdrop-blur-lg border-r shadow-glow">
+            <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
+            <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-background/98 backdrop-blur-lg border-l shadow-2xl transform transition-transform duration-300">
               <div className="p-6">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center space-x-2">
+                    <img src={vivaLogo} alt="VIVA PLUS" className="w-8 h-8 rounded-full" />
+                    <span className="text-lg font-bold text-foreground">VIVA PLUS</span>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2"
+                  >
+                    <X className="w-5 h-5" />
+                  </Button>
+                </div>
+                
                 <nav className="flex flex-col space-y-6">
                   <button 
                     onClick={() => {
                       scrollToSection('home');
                       setIsMobileMenuOpen(false);
                     }}
-                    className="text-left text-2xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
+                    className="text-left text-xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
                   >
                     Home
                   </button>
@@ -138,7 +153,7 @@ const Header = () => {
                       scrollToSection('about');
                       setIsMobileMenuOpen(false);
                     }}
-                    className="text-left text-2xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
+                    className="text-left text-xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
                   >
                     About
                   </button>
@@ -147,7 +162,7 @@ const Header = () => {
                       scrollToSection('products');
                       setIsMobileMenuOpen(false);
                     }}
-                    className="text-left text-2xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
+                    className="text-left text-xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
                   >
                     Products
                   </button>
@@ -156,7 +171,7 @@ const Header = () => {
                       scrollToSection('contact');
                       setIsMobileMenuOpen(false);
                     }}
-                    className="text-left text-2xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
+                    className="text-left text-xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
                   >
                     Contact
                   </button>

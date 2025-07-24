@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Mail, ArrowLeft } from "lucide-react";
+import { MessageCircle, Mail, ArrowLeft, Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface Product {
@@ -159,35 +159,32 @@ Best regards,
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="flex flex-col lg:flex-row h-screen overflow-hidden">
-        
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden p-4 border-b bg-card">
-          <Button
-            variant="outline"
-            onClick={() => setSelectedCategory(selectedCategory ? null : "menu")}
-            className="flex items-center gap-2"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            {selectedCategory === "menu" ? "Close Menu" : "Categories"}
-          </Button>
-        </div>
+      {/* Mobile Header */}
+      <div className="lg:hidden p-4 border-b bg-card flex items-center justify-between">
+        <Button
+          variant="ghost"
+          onClick={() => navigate('/')}
+          className="flex items-center gap-2"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Home
+        </Button>
+        <Button
+          variant="outline"
+          onClick={() => setSelectedCategory(selectedCategory === "menu" ? null : "menu")}
+          className="flex items-center gap-2"
+        >
+          <Menu className="w-4 h-4" />
+          Categories
+        </Button>
+      </div>
 
+      <div className="flex flex-col lg:flex-row h-screen overflow-hidden">
         {/* Sidebar */}
         <aside className={`lg:w-64 bg-card p-4 overflow-y-auto border-r transition-all duration-300 ${
           selectedCategory === "menu" ? "block" : "hidden lg:block"
         }`}>
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-primary text-xl font-bold">Categories</h2>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => navigate('/')}
-              className="lg:hidden"
-            >
-              <ArrowLeft className="w-4 h-4" />
-            </Button>
-          </div>
+          <h2 className="text-primary text-xl font-bold mb-4">Categories</h2>
           <div className="space-y-2">
             <button 
               onClick={() => filterProducts(null)}
