@@ -64,16 +64,21 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
-			backgroundImage: {
-				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-card': 'var(--gradient-card)',
-			},
-			boxShadow: {
-				'soft': 'var(--shadow-soft)',
-				'glow': 'var(--shadow-glow)',
-				'floating': 'var(--shadow-floating)',
-			},
+			whatsapp: {
+				DEFAULT: 'hsl(var(--whatsapp))',
+				foreground: 'hsl(var(--whatsapp-foreground))'
+			}
+		},
+		backgroundImage: {
+			'gradient-primary': 'var(--gradient-primary)',
+			'gradient-hero': 'var(--gradient-hero)',
+			'gradient-card': 'var(--gradient-card)',
+		},
+		boxShadow: {
+			'soft': 'var(--shadow-soft)',
+			'glow': 'var(--shadow-glow)',
+			'floating': 'var(--shadow-floating)',
+		},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',

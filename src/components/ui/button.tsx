@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-glow transform hover:scale-105 font-semibold",
-        whatsapp: "bg-[#25D366] text-white hover:bg-[#25D366]/90 shadow-soft hover:shadow-floating transform hover:scale-105",
+        whatsapp: "bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90 shadow-soft hover:shadow-floating transform hover:scale-105",
       },
       size: {
         default: "h-10 px-4 py-2",

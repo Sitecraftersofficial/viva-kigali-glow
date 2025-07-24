@@ -125,13 +125,20 @@ const Products = () => {
 
   const sendViaWhatsApp = () => {
     if (!modalProduct) return;
-    const productMessage = `Hello,
+    
+    let productMessage = `Hello,
 
 I'm interested in "${modalProduct.name}" (ID: ${modalProduct.id}). Could you please provide more details?
 
-Link: ${window.location.origin}/products?product=${modalProduct.id}
+Link: ${window.location.origin}/products?product=${modalProduct.id}`;
 
-${message}
+    if (message.trim()) {
+      productMessage += `
+
+Additional message: ${message}`;
+    }
+
+    productMessage += `
 
 Best regards,
 [Your Name]`;
@@ -142,13 +149,20 @@ Best regards,
 
   const sendViaEmail = () => {
     if (!modalProduct) return;
-    const productMessage = `Hello,
+    
+    let productMessage = `Hello,
 
 I'm interested in "${modalProduct.name}" (ID: ${modalProduct.id}). Could you please provide more details?
 
-Link: ${window.location.origin}/products?product=${modalProduct.id}
+Link: ${window.location.origin}/products?product=${modalProduct.id}`;
 
-${message}
+    if (message.trim()) {
+      productMessage += `
+
+Additional message: ${message}`;
+    }
+
+    productMessage += `
 
 Best regards,
 [Your Name]`;

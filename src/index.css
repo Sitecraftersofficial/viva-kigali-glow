@@ -2,111 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Viva_.plus Beauty Brand Design System
+/* VIVA PLUS Beauty Brand Design System
 All colors MUST be HSL for proper theming.
-*/
+Black & Golden Luxury Theme */
 
 @layer base {
   :root {
-    /* Brand Colors - Luxury Beauty Palette */
-    --background: 15 25% 97%;
-    --foreground: 15 15% 15%;
+    /* Brand Colors - Black & Golden Luxury */
+    --background: 0 0% 5%;
+    --foreground: 45 100% 85%;
 
-    --card: 15 25% 98%;
-    --card-foreground: 15 15% 15%;
+    --card: 0 0% 8%;
+    --card-foreground: 45 100% 90%;
 
-    --popover: 15 25% 98%;
-    --popover-foreground: 15 15% 15%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 45 100% 90%;
 
-    /* Primary - Rose Gold */
-    --primary: 15 65% 65%;
-    --primary-foreground: 15 25% 98%;
-    --primary-glow: 15 85% 75%;
+    /* Primary - Luxury Gold */
+    --primary: 45 100% 70%;
+    --primary-foreground: 0 0% 5%;
+    --primary-glow: 45 100% 80%;
 
-    /* Secondary - Warm Neutral */
-    --secondary: 15 20% 92%;
-    --secondary-foreground: 15 15% 25%;
+    /* Secondary - Dark Gray */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 45 100% 85%;
 
-    /* Muted - Soft Background */
-    --muted: 15 15% 94%;
-    --muted-foreground: 15 10% 50%;
+    /* Muted - Charcoal */
+    --muted: 0 0% 12%;
+    --muted-foreground: 45 20% 60%;
 
-    /* Accent - Deep Rose */
-    --accent: 340 75% 55%;
-    --accent-foreground: 15 25% 98%;
+    /* Accent - Bronze */
+    --accent: 30 80% 55%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 15 25% 98%;
+    --destructive-foreground: 45 100% 90%;
 
-    --border: 15 15% 88%;
-    --input: 15 15% 92%;
-    --ring: 15 65% 65%;
+    --border: 0 0% 20%;
+    --input: 0 0% 12%;
+    --ring: 45 100% 70%;
+
+    /* WhatsApp Green */
+    --whatsapp: 142 70% 49%;
+    --whatsapp-foreground: 0 0% 100%;
 
     /* Brand Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(15 65% 65% / 0.9), hsl(340 75% 55% / 0.8));
-    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(15 20% 95%));
+    --gradient-primary: linear-gradient(135deg, hsl(45 100% 60%), hsl(45 100% 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 5% / 0.9), hsl(45 100% 20% / 0.3));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 10%));
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(15 30% 40% / 0.1);
-    --shadow-glow: 0 8px 32px hsl(var(--primary) / 0.2);
-    --shadow-floating: 0 12px 48px hsl(15 30% 40% / 0.15);
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 8px 32px hsl(45 100% 70% / 0.2);
+    --shadow-floating: 0 12px 48px hsl(0 0% 0% / 0.4);
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 45 100% 85%;
+    --sidebar-primary: 45 100% 70%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 45 100% 85%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 45 100% 70%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
+    /* Keep same dark theme as it matches our black & gold design */
+    --background: 0 0% 5%;
+    --foreground: 45 100% 85%;
+    --card: 0 0% 8%;
+    --card-foreground: 45 100% 90%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 45 100% 90%;
+    --primary: 45 100% 70%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 45 100% 85%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 45 20% 60%;
+    --accent: 30 80% 55%;
+    --accent-foreground: 0 0% 5%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --destructive-foreground: 45 100% 90%;
+    --border: 0 0% 20%;
+    --input: 0 0% 12%;
+    --ring: 45 100% 70%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 45 100% 85%;
+    --sidebar-primary: 45 100% 70%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 45 100% 85%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 45 100% 70%;
   }
 }
 
