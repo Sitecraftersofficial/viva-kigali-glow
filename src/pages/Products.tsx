@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Mail } from "lucide-react";
+import { MessageCircle, Mail, ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface Product {
   id: string;
@@ -17,6 +18,7 @@ interface Category {
 }
 
 const Products = () => {
+  const navigate = useNavigate();
   const [products] = useState<Product[]>([
     {
       id: "1",
@@ -190,8 +192,18 @@ Best regards,
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 overflow-y-auto">
-          <h1 className="text-2xl font-bold mb-4 text-primary">All Products</h1>
+        <main className="flex-1 p-4 md:p-6 overflow-y-auto">
+          <div className="flex items-center gap-4 mb-6">
+            <Button
+              variant="ghost"
+              onClick={() => navigate('/')}
+              className="flex items-center gap-2"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Home
+            </Button>
+            <h1 className="text-xl md:text-2xl font-bold text-primary">All Products</h1>
+          </div>
           
           {/* Subcategory Buttons */}
           {selectedCategory && (

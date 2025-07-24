@@ -21,15 +21,15 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
+        <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 animate-fade-in">
           VIVA PLUS
         </h1>
         
-        <p className="text-lg md:text-xl lg:text-2xl mb-4 animate-fade-in opacity-90 font-light">
+        <p className="text-base md:text-xl lg:text-2xl mb-3 md:mb-4 animate-fade-in opacity-90 font-light">
           Your Premier Beauty Destination in Kigali
         </p>
         
-        <p className="text-md md:text-lg mb-8 animate-fade-in opacity-80 max-w-2xl mx-auto">
+        <p className="text-sm md:text-lg mb-6 md:mb-8 animate-fade-in opacity-80 max-w-2xl mx-auto px-2">
           Discover authentic high-end cosmetics, skincare, and fragrances from world-renowned brands. 
           Verified • Trusted • Delivered Fast
         </p>
