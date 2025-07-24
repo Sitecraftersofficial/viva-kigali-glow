@@ -12,11 +12,30 @@ import LoadingPage from "./components/LoadingPage";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [pageLoading, setPageLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = () => setLoading(true);
-    const handleComplete = () => setLoading(false);
+    // Initial app loading
+    const handleLoad = () => {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
+    };
+
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+      return () => window.removeEventListener('load', handleLoad);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleStart = () => setPageLoading(true);
+    const handleComplete = () => {
+      setTimeout(() => setPageLoading(false), 500);
+    };
 
     // Show loading when navigating
     window.addEventListener('beforeunload', handleStart);
@@ -26,12 +45,16 @@ const App = () => {
     };
   }, []);
 
+  if (isLoading) {
+    return <LoadingPage />;
+  }
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        {loading && <LoadingPage />}
+        {pageLoading && <LoadingPage />}
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />

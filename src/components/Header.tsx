@@ -1,10 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, Instagram, MapPin, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import vivaLogo from "@/assets/viva-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,9 +51,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">V</span>
-            </div>
+            <img src={vivaLogo} alt="VIVA PLUS" className="w-10 h-10 rounded-full" />
             <span className="text-xl md:text-2xl font-bold text-foreground">
               VIVA PLUS
             </span>
@@ -104,67 +117,80 @@ const Header = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-border/10">
-            <nav className="flex flex-col space-y-4">
-              <button 
-                onClick={() => {
-                  scrollToSection('home');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="text-left text-foreground hover:text-accent-foreground transition-colors font-medium"
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => {
-                  scrollToSection('about');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="text-left text-foreground hover:text-accent-foreground transition-colors font-medium"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => {
-                  scrollToSection('products');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="text-left text-foreground hover:text-accent-foreground transition-colors font-medium"
-              >
-                Products
-              </button>
-              <button 
-                onClick={() => {
-                  scrollToSection('contact');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="text-left text-foreground hover:text-accent-foreground transition-colors font-medium"
-              >
-                Contact
-              </button>
-              
-              <div className="flex items-center space-x-3 pt-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => window.open("https://instagram.com/viva_.plus", "_blank")}
-                >
-                  <Instagram className="w-4 h-4 mr-2" />
-                  Instagram
-                </Button>
-                
-                <Button
-                  variant="whatsapp"
-                  size="sm"
-                  onClick={handleWhatsAppClick}
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  WhatsApp
-                </Button>
+          <div className="fixed inset-0 z-40 md:hidden">
+            <div className="fixed inset-0 bg-background/95 backdrop-blur-md" />
+            <div className="relative z-50 flex h-full w-full flex-col bg-background/98 backdrop-blur-lg border-r shadow-glow">
+              <div className="p-6">
+                <nav className="flex flex-col space-y-6">
+                  <button 
+                    onClick={() => {
+                      scrollToSection('home');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="text-left text-2xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
+                  >
+                    Home
+                  </button>
+                  <button 
+                    onClick={() => {
+                      scrollToSection('about');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="text-left text-2xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
+                  >
+                    About
+                  </button>
+                  <button 
+                    onClick={() => {
+                      scrollToSection('products');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="text-left text-2xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
+                  >
+                    Products
+                  </button>
+                  <button 
+                    onClick={() => {
+                      scrollToSection('contact');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="text-left text-2xl text-foreground hover:text-primary transition-colors font-medium py-3 border-b border-border/20"
+                  >
+                    Contact
+                  </button>
+                  
+                  <div className="flex flex-col space-y-4 pt-6">
+                    <Button
+                      variant="ghost"
+                      size="lg"
+                      onClick={() => {
+                        window.open("https://instagram.com/viva_.plus", "_blank");
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="justify-start"
+                    >
+                      <Instagram className="w-5 h-5 mr-3" />
+                      Follow on Instagram
+                    </Button>
+                    
+                    <Button
+                      variant="whatsapp"
+                      size="lg"
+                      onClick={() => {
+                        handleWhatsAppClick();
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="justify-start"
+                    >
+                      <MessageCircle className="w-5 h-5 mr-3" />
+                      WhatsApp Us
+                    </Button>
+                  </div>
+                </nav>
               </div>
-            </nav>
+            </div>
           </div>
         )}
       </div>

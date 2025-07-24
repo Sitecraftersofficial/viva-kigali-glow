@@ -159,11 +159,35 @@ Best regards,
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="flex flex-col md:flex-row h-screen overflow-hidden">
+      <div className="flex flex-col lg:flex-row h-screen overflow-hidden">
         
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden p-4 border-b bg-card">
+          <Button
+            variant="outline"
+            onClick={() => setSelectedCategory(selectedCategory ? null : "menu")}
+            className="flex items-center gap-2"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            {selectedCategory === "menu" ? "Close Menu" : "Categories"}
+          </Button>
+        </div>
+
         {/* Sidebar */}
-        <aside className="md:w-64 bg-card p-4 overflow-y-auto border-r">
-          <h2 className="text-primary text-xl font-bold mb-4">Categories</h2>
+        <aside className={`lg:w-64 bg-card p-4 overflow-y-auto border-r transition-all duration-300 ${
+          selectedCategory === "menu" ? "block" : "hidden lg:block"
+        }`}>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-primary text-xl font-bold">Categories</h2>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate('/')}
+              className="lg:hidden"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </Button>
+          </div>
           <div className="space-y-2">
             <button 
               onClick={() => filterProducts(null)}
@@ -197,7 +221,7 @@ Best regards,
             <Button
               variant="ghost"
               onClick={() => navigate('/')}
-              className="flex items-center gap-2"
+              className="hidden lg:flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Home

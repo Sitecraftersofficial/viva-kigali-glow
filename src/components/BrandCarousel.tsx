@@ -70,7 +70,7 @@ const BrandCarousel = () => {
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-6">
           {brands.slice(0, 10).map((brand, index) => (
             <div
               key={brand}
