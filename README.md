@@ -1,24 +1,20 @@
-# Welcome to your Lovable project
+# Welcome to your VIVA PLUS Landing Page
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/4ba0d407-906b-4d9d-941b-c9868c2d45a5
+**URL**: https://vivakigaliglow.netlify.app/
 
 ## How can I edit this code?
 
-There are several ways of editing your application.
+There are several ways of editing your application:
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4ba0d407-906b-4d9d-941b-c9868c2d45a5) and start prompting.
+### 🛠️ Use your preferred IDE
 
-Changes made via Lovable will be committed automatically to this repo.
+If you want to work locally using your own IDE, you can clone this repo and push changes.
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+> **Requirement:** You must have Node.js & npm installed — [install via nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 Follow these steps:
 
@@ -27,47 +23,79 @@ Follow these steps:
 git clone <YOUR_GIT_URL>
 
 # Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+cd viva-plus-landing
 
 # Step 3: Install the necessary dependencies.
-npm i
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server with auto-reloading and live preview.
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
+
+### ✏️ Edit a file directly in GitHub
 
 - Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Click the "Edit" button (pencil icon) at the top right.
+- Make your changes and commit them.
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### ⚡ Use GitHub Codespaces
 
-## What technologies are used for this project?
+- Go to the main page of your repository.
+- Click the green "Code" button.
+- Select the **Codespaces** tab.
+- Click "New codespace" to launch the editor in your browser.
+- Edit and commit as usual.
+
+---
+
+## 🧪 What technologies are used for this project?
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **shadcn/ui** (UI Components)
+- **Framer Motion** (optional animations)
+- **Heroicons** / **Font Awesome** (icon libraries)
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/4ba0d407-906b-4d9d-941b-c9868c2d45a5) and click on Share -> Publish.
+## 🚀 How can I deploy this project?
 
-## Can I connect a custom domain to my Lovable project?
+You can deploy the site using:
 
-Yes, you can!
+- [Netlify](https://www.netlify.com/)
+- [Vercel](https://vercel.com/)
+- GitHub Pages
+- cPanel or any custom hosting provider
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🌍 Can I connect a custom domain?
+
+Yes, absolutely!
+
+If you're using Netlify, Vercel, or another provider, they all support easy custom domain integration.
+
+Just go to your project's dashboard → Domain settings → Add custom domain and follow the steps provided by your host.
+
+---
+
+## 📬 Contact
+
+This project was built for:
+
+**VIVA PLUS – Premium Beauty Store in Kigali, Rwanda**  
+📍 MIC Building F1 Room 14, Kigali  
+📱 WhatsApp: +250 789 572 263  
+🔗 Instagram: [@viva_.plus](https://instagram.com/viva_.plus)
+
+---
+
+© 2025 VIVA PLUS. All rights reserved.
